@@ -223,7 +223,7 @@ angularAPP.controller('CreateConnectorCtrl', function ($scope, $rootScope, $http
       $http({
          method: 'PUT',
          url: env.KAFKA_CONNECT() + '/connector-plugins/' + pluginClass + '/config/validate',
-         data: '{ "connector.class" : "' + pluginClass + '" }',
+         data: '{ "connector.class" : "' + pluginClass + '", "topic": "" }',
          dataType: 'json',
          headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}
       }).then(function(data){
